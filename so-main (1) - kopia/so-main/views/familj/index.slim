@@ -1,0 +1,27 @@
+section#body_familj
+
+    sec#sec1_familj
+
+            form.ppp method="get" action="/familj/settings" 
+                input type="submit" value="settings"
+
+            ol
+
+            - familj_users.each do |todo|
+
+                li
+            
+                    li
+                        - if todo["admin_normal"] == 1
+                            p.admin_text #{todo["username"]} - Admin
+                            -if todo["user_id"] == session[:id_username]
+                                    
+                        - if todo["admin_normal"] == 0
+                            p #{todo["username"]} - User
+                            -if todo["user_id"] == session[:id_username]
+            
+        
+    sec#sec2_familj
+
+        form method="POST" action="/familj/#{session[:id_username]}/delete" 
+                input type="submit" value="Ta bort dig från familjen"

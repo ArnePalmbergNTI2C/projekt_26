@@ -1,0 +1,34 @@
+section#body_startsida_inlogg
+    section#sec1_startsida_inlogg
+        p Skapa en ny användare.
+        form action="users_new" method="post" 
+            input type="text" name="username" placeholder="Skriv namn"
+            input type="password" name="password" placeholder="Skriv lösenord"
+            input type="password" name="password_confirm" placeholder="Skriv löserord igen"
+            input type="submit" value="Registrera"
+
+    section#sec2_startsida_inlogg
+        p Logga in i en profil
+        form action="login_user" method="post"
+            input type="text" name="username" placeholder="Skriv namn"
+            input type="password" name="password" placeholder="Skriv lösenord"
+            input type="submit" value="Logga in"
+
+
+    section#sec3_startsida_inlogg
+        p Skapa ett nytt familjekonto. Som skapare blir man admin
+        form action="familj_new" method="post" 
+            input type="text" name="family_name" placeholder="Skriv namn"
+            input type="password" name="password" placeholder="Skriv lösenord"
+            input type="password" name="password_confirm" placeholder="Skriv lösenord igen"
+            input type="submit" value="Registrera"
+
+    section#sec4_startsida_inlogg
+
+        p Logga in i ett familjekonto
+        form action="login_familj" method="post"
+            input type="text" name="family_name" placeholder="Skriv namn"
+            input type="password" name="password" placeholder="Skriv lösenord"
+            input type="submit" value="Logga in"
+
+

@@ -1,0 +1,21 @@
+section#body_familj
+
+    sec#sec1_familj
+
+            - familj_users.each do |todo|
+
+                li
+            
+                    li
+                        - if todo["admin_normal"] == 1
+                            p.admin_text #{todo["username"]} - Admin
+                            -if todo["user_id"] == session[:id_username]                                    
+                        - if todo["admin_normal"] == 0
+                            p #{todo["username"]} - User
+                            -if todo["user_id"] == session[:id_username]                                                
+                        form.ppp method="post" action="/familj/settings/#{todo['user_id']}/delete" 
+                            input type="submit" value="Ta bort"
+                        form action="/familj/settings/#{todo['user_id']}/update" method="post"  
+                            input.ppp type="submit" value="Gör till admin"
+            form action="/familj_settings_tillbaka" method="post"
+                input type="submit" value="Tillbaka"

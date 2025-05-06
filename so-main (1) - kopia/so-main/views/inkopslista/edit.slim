@@ -1,0 +1,14 @@
+
+section#body_inkoplista
+
+    sec#sec1_inkoplista
+
+        form action="/inkopslista/#{result['todo_id']}/update" method="post"  
+            input.ppp type="text" name="title" value="#{result['lista']}"
+            input type="hidden" name="user_id" value="#{result['user_id']}"
+            input type="submit" value="Ändra"
+
+
+    sec#sec2_inkoplista
+
+        p här kan du ändra texten 

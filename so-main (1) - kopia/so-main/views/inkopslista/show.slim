@@ -1,0 +1,29 @@
+section#body_inkoplista
+
+    sec#sec1_inkoplista
+
+
+        ol
+            - egna_listor.each do |x|
+
+                li
+
+                    p.pp #{x["content"]}
+                    
+
+                    form.ppp method="get" action="/inkopslista/#{x['id']}/#{x['todo_id']}/edit" 
+                        input type="submit" value="Ändra"
+
+                    form method="POST" action="/inkopslista/#{x['id']}/#{x['todo_id']}/delete" 
+                        input type="submit" value="Ta bort"
+                    
+                    
+        form.formo action="/inkopslista/#{session[:idd]}/new" method="post"
+            input.ppp type="text" name="title" placeholder="Vad vill du lägga till i listan?"
+            input type="submit" value="Lägg till"
+        form action="/inkopslista_tillbaka" method="post"
+            input type="submit" value="Tillbaka"
+
+    sec#sec2_inkoplista
+
+        p Nu är du inne i en lista. Du kan lägga till, ta bort och ändra namn saker från listan. Klicka på "Tillbaka" för att komma tillbaka till dina andra listor.

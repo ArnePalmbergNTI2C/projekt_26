@@ -1,0 +1,26 @@
+section#body_inkoplista
+
+    sec#sec1_inkoplista
+
+        ol
+
+            - todos.each do |todo|
+
+                li
+            
+                    a.aa.pp href="inkopslista/#{todo['todo_id']}" #{todo["lista"]}
+
+                    form.ppp method="get" action="/inkopslista/#{todo['todo_id']}/edit" 
+                        input type="submit" value="Ändra"
+                    form method="post" action="/inkopslista/#{todo['todo_id']}/delete" 
+                        input type="submit" value="Ta bort"
+
+                
+                        
+            form.formo action="/inkopslista" method="post"
+                input.ppp type="text" name="title" placeholder="Vad vill du skapa för lista?"
+                input type="submit" value="Lägg till"
+
+    sec#sec2_inkoplista
+
+        p Här kan du skapa, ändra namn och hålla koll på dina att göra listor på ett enkelt och smidigt sätt! Lägg till listor snabbt, ta bort det du inte längre behöver och håll listorna uppdaterade. Klicka på namnet på listan för att öppna listan.
